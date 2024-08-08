@@ -45,6 +45,7 @@ if __name__ == "__main__":
                     command = r.recognize_google(audio)
                     processCommand(command)
                     
+                    
         except sr.UnknownValueError:
             print("Sorry, I couldn't understand that.")
         except sr.RequestError as e:
