@@ -4,4 +4,5 @@
 
 4. Then install this pip - pip install pyttsx3
 5. pip list
-6. Then install this pip - pip install PocketSphinx
+6. Then install this pip - pip install PocketSphinx  
+7. Then install this pip - pip install openai
