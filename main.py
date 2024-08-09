@@ -2,9 +2,13 @@ import speech_recognition as sr
 import webbrowser
 import pyttsx3
 import musicli
+import requests
+
 
 recoginer = sr.Recognizer()
 engine = pyttsx3.init()
+
+newsapi = "e1d7a36a07e84209aad205992f65ad8a"
 
 def speak(text):
     engine.say(text)
@@ -26,6 +30,19 @@ def processCommand(command):
         song = command.lower().split(" ")[1]
         link = musicli.music[song]
         webbrowser.open(link)
+    # Use News Api To lisiten news with this bot  
+    elif "news" in command.lower():
+        r = requests.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=e1d7a36a07e84209aad205992f65ad8a")
+        if r.status_code == 200:
+        # Parse the JSON response
+         data = r.json()
+        
+        # Loop through each article and print the title
+        for article in data['articles']:
+            speak(article['title'])
+
+
+
     else:
         speak("Sorry, I didn't understand the command.")
 if __name__ == "__main__":
