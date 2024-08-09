@@ -14,17 +14,17 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-def aiprocess(command):
-    client = OpenAI(
-        api_key= "#",
-    )
-    completion = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=[
-    {"role": "system", "content": "You are a Virtual assistant named roy, skilled in General Task"},
-    {"role": "user", "content": command}]
-)
-    return completion.choices[0].message.content
+# def aiprocess(command):
+#     client = OpenAI(
+#         api_key= "#",
+#     )
+#     completion = client.chat.completions.create(
+#     model="gpt-4o-mini",
+#     messages=[
+#     {"role": "system", "content": "You are a Virtual assistant named roy, skilled in General Task"},
+#     {"role": "user", "content": command}]
+# )
+#     return completion.choices[0].message.content
 
 
 def processCommand(command):
